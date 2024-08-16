@@ -4,23 +4,47 @@
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/index.d.ts",
-  "description": "",
   "scripts": {
     "cm": "cz",
+    "clean": "rimraf dist react-text-animate-*.tgz",
     "build": "npx rollup -c",
+    "knip": "knip",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "validate": "run-s lint:fix knip format",
+    "clb": "run-s clean lint build",
     "prepare": "husky && husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "text animations",
+    "animated text",
+    "typewriter effect",
+    "typing animation",
+    "react text animations",
+    "react typing animations",
+    "react animated text",
+    "react animation",
+    "framer",
+    "scroll animations"
+  ],
+  "author": "mwaqar29@gmail.com",
+  "license": "MIT",
+  "description": "A react component library with a collection of modern, high quality and smooth text animations built using framer motion.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwaqar29/react-text-animate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mwaqar29/react-text-animate/issues"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^22.2.0",
+    "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
     "autoprefixer": "^10.4.20",
@@ -33,10 +57,22 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "husky": "^9.1.4",
+    "knip": "^5.27.2",
     "lint-staged": "^15.2.8",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.40",
     "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
     "rollup": "^4.20.0",
     "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.5.4"
-  }
+  },
+  "peerDependencies": {
+    "framer-motion": "^11.3.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "files": [
+    "dist"
+  ]
 }

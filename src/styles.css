@@ -1,0 +1,25 @@
+/* Write your Global styles */
+
+/*
+  What is it: It's a utility class for improving accessibility with screen readers taken from tailwind.
+
+  Why we need it: The text which is to be animated is often required to be split up into characters,
+  each character is in its own <span> tag. Which makes it diffcult for screen readers to read them.
+
+  What it does: Applying this class to an element will make the text visible(or readable) to screen readers only
+  and the element will be hidden from view.
+
+  How to use it: Provide the same text which you are animating in a separate span tag and add this class to it.
+  Check the react components for practical usage examples.
+*/
+.__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

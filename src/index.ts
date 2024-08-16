@@ -1,3 +1,3 @@
-let a: number;
-a = 1;
-console.log("test", a);
+import './styles.css'
+
+export * from './components/text-effect-1'
