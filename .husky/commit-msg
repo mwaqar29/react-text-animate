@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+npx --no-install commitlint --edit $1
