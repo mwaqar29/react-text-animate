@@ -1,0 +1,10 @@
+.text-container {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-hidden {
+  position: absolute;
+  inset: 0px;
+}
