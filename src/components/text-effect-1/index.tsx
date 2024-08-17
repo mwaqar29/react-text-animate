@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import React, { CSSProperties, useMemo, useRef } from 'react'
 
-interface TextEffectProps {
+interface TextEffectOneProps {
   wrapperElement?: keyof JSX.IntrinsicElements
   text: string | string[]
   className?: string
@@ -16,7 +16,7 @@ interface TextEffectProps {
   lineHeight?: number
 }
 
-export const TextEffectOne: React.FC<TextEffectProps> = ({
+export const TextEffectOne: React.FC<TextEffectOneProps> = ({
   wrapperElement: Wrapper = 'p',
   text,
   className,

@@ -7,7 +7,7 @@ import './index.css'
   Reference: hover.dev/components/links#reveal-links
 */
 
-interface TextEffectProps {
+interface TextEffectThreeProps {
   text: string
   className?: string
   style?: CSSProperties
@@ -18,7 +18,7 @@ interface TextEffectProps {
   animationDuration?: number
 }
 
-export const TextEffectThree: React.FC<TextEffectProps> = ({
+export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
   text,
   className,
   style,
@@ -40,7 +40,7 @@ export const TextEffectThree: React.FC<TextEffectProps> = ({
           ...{
             width: 'fit-content',
             lineHeight:
-              lineHeight || (text === text.toUpperCase() ? '0.81' : '1.2'),
+              lineHeight || (text === text.toUpperCase() ? 0.81 : 1.2),
           },
         }}
       >

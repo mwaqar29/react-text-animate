@@ -10,5 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "noUncheckedIndexedAccess": true,
     "noEmit": true
-  }
+  },
+  "include": ["src/**/*", "rollup.config.ts"],
+  "exclude": ["node_modules/**/*", "dist/**/*"]
 }
