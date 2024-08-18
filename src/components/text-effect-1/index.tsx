@@ -94,28 +94,3 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
     </Wrapper>
   )
 }
-
-// USAGE EXAMPLES
-/*
-  <TextEffectOne
-    id="one"
-    text={word}
-    className="text-8xl tracking-wider font-medium"
-    staggerDuration={0.12}
-  />
-  <TextEffectOne
-    id="two"
-    text={words}
-    className="text-9xl tracking-wider font-medium"
-    initialDelay={1.35}
-    staggerDuration={0.04}
-    rotation={67.5}
-  />
-  <TextEffectOne
-    id="three"
-    text={lines}
-    className="text-9xl tracking-wider font-medium"
-    staggerDuration={0.12}
-    initialDelay={2.25}
-  />
-*/

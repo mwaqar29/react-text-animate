@@ -93,9 +93,3 @@ export const TextEffectTwo: React.FC<TextEffectTwoProps> = ({
     </Wrapper>
   )
 }
-
-// USAGE EXAMPLES
-/*
-  <TextEffectTwo className="text-6xl" words={words} animateOnce />
-  <TextEffectTwo words={words} filter={false} />
-*/
