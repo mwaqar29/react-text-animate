@@ -8,7 +8,7 @@ import React, { CSSProperties, useEffect, useRef } from 'react'
 
 interface TextEffectTwoProps {
   wrapperElement?: keyof JSX.IntrinsicElements
-  words: string
+  text: string
   className?: string
   style?: CSSProperties
   filter?: boolean
@@ -21,7 +21,7 @@ interface TextEffectTwoProps {
 
 export const TextEffectTwo: React.FC<TextEffectTwoProps> = ({
   wrapperElement: Wrapper = 'p',
-  words,
+  text,
   className,
   style,
   filter = true,
@@ -37,7 +37,7 @@ export const TextEffectTwo: React.FC<TextEffectTwoProps> = ({
     amount: elementVisibilityAmount,
     once: animateOnce,
   })
-  const wordsArray = words.split(' ')
+  const wordsArray = text.split(' ')
 
   useEffect(() => {
     if (isInView) {
@@ -69,7 +69,7 @@ export const TextEffectTwo: React.FC<TextEffectTwoProps> = ({
   const renderWords = () => {
     return (
       <motion.span ref={ref}>
-        <span className="__sr-only">{words}</span>
+        <span className="__sr-only">{text}</span>
         {wordsArray.map((word, idx) => (
           <motion.span
             key={word + idx}
