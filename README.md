@@ -4,7 +4,7 @@
 
 <p align="center">
   <em>
-    Elevate your React projects with a stunning collection of sleek, modern, and silky-smooth text animation components powered by Framer Motion. Effortlessly add a touch of elegance and bring your UI to life, adding dynamic flair and visual appeal that will leave your users impressed!
+    Elevate your React/Next.js projects with a stunning collection of sleek, modern, and silky-smooth text animation components powered by Framer Motion. Effortlessly add a touch of elegance and bring your UI to life, adding dynamic flair and visual appeal that will leave your users impressed!
   </em>
 </p>
 
@@ -106,10 +106,6 @@ The `react-text-animate` library offers a seamless blend of ease & functionality
     │   │   └── ...
     │   ├── index.ts
     │   └── styles.css
-    ├── CODE_OF_CONDUCT.md
-    ├── CONTRIBUTING.md
-    ├── LICENSE
-    ├── README.md
     ├── package.json
     ├── rollup.config.ts
     └── ...
@@ -119,14 +115,14 @@ The `react-text-animate` library offers a seamless blend of ease & functionality
 
 **_Requirements:_**
 
-A React application.
+A React/Next.js application.
 
 > [!NOTE]
 > This package is built using `React v18.3`. So try to have something similar in your project so that the library works without any issues.
 
 ### ⚙️ Installation
 
-Install the `react-text-animate` library in your react application using one of the the below commands (as per the package manager installed in your system).
+Install the `react-text-animate` library in your React/Next.js application using one of the the below commands (as per the package manager installed in your system).
 
 - npm
   ```sh
@@ -186,8 +182,8 @@ Yes, it is as simple as that to get started! But don't get carried away by the s
 
 | Prop                | Type    | Default | Description                                               |
 | ------------------- | ------- | ------- | --------------------------------------------------------- |
-| `words`             | string  | `null`  | The actual text to animate. For e.g `"Hey yo!"`.          |
-| `filter`            | boolean | `false` | Toggle blur effect in animation.                          |
+| `text`              | string  | `null`  | The actual text to animate. For e.g `"Hey yo!"`.          |
+| `filter`            | boolean | `true`  | Toggle blur effect in animation.                          |
 | `animationDuration` | number  | `0.1`   | TIme taken for entire animation to complete (in seconds). |
 
 #### Component: `<TextEffectThree />`
