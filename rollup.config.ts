@@ -2,6 +2,7 @@ import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 import autoprefixer from 'autoprefixer'
 import { defineConfig, RollupOptions } from 'rollup'
+import banner2 from 'rollup-plugin-banner2'
 import del from 'rollup-plugin-delete'
 import { dts } from 'rollup-plugin-dts'
 import postcss from 'rollup-plugin-postcss'
@@ -22,6 +23,7 @@ const config: RollupOptions[] = defineConfig([
         minimize: true,
       }),
       terser(),
+      banner2(() => `"use client";`),
     ],
   },
   {
