@@ -1,3 +1,18 @@
+## [2.0.0](https://github.com/mwaqar29/react-text-animate/compare/1.0.0...2.0.0) (2024-08-19)
+
+### ⚠ BREAKING CHANGES
+
+- **text-effect-2:** kindly use the prop name 'text' to pass your string to the component instead of
+  'words'.
+
+### refactor
+
+- **text-effect-2:** changed the prop name 'words' to 'text' for consistency ([57c72cd](https://github.com/mwaqar29/react-text-animate/commit/57c72cda8ceb21d11f741128c0a43cf73c913c00))
+
+### Features
+
+- **nextjs:** added support for nextjs by making the components as client components ([010473b](https://github.com/mwaqar29/react-text-animate/commit/010473bca78a7e2ff43831ebb256545703379558))
+
 ## 1.0.0 (2024-08-19)
 
 ### Features
