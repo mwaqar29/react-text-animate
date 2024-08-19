@@ -97,35 +97,22 @@ The `react-text-animate` library offers a seamless blend of ease & functionality
 ```sh
 └── react-text-animate/
     ├── .husky/
-    │   ├── .gitignore
-    │   ├── commit-msg
-    │   └── pre-commit
     ├── src/
+    │   ├── assets/
     │   ├── components/
-    │   │   ├── text-effect-1/
-    │   │   │   └── index.tsx
-    │   │   ├── text-effect-2/
-    │   │   │   └── index.tsx
     │   │   ├── text-effect-3/
     │   │   │   ├── index.tsx
     │   │   │   └── index.css
     │   │   └── ...
     │   ├── index.ts
     │   └── styles.css
-    ├── .commitlintrc
-    ├── .czrc
-    ├── .editorconfig
-    ├── .eslintignore
-    ├── .eslintrc.json
-    ├── .gitignore
-    ├── .lintstagedrc
-    ├── .prettierrc
+    ├── CODE_OF_CONDUCT.md
+    ├── CONTRIBUTING.md
     ├── LICENSE
     ├── README.md
-    ├── package-lock.json
     ├── package.json
     ├── rollup.config.ts
-    └── tsconfig.json
+    └── ...
 ```
 
 ## 🚀 Quick Start
@@ -139,7 +126,7 @@ A React application.
 
 ### ⚙️ Installation
 
-Install the `react-text-animate` library using one of the the below commands (as per the package manager installed in your system).
+Install the `react-text-animate` library in your react application using one of the the below commands (as per the package manager installed in your system).
 
 - npm
   ```sh
@@ -156,7 +143,7 @@ Install the `react-text-animate` library using one of the the below commands (as
 
 ### 💻 Usage
 
-Out of the box, you can use one of the components shown in the example below:
+Out of the box, you can use one of the components as shown in the example below:
 
 ```jsx
 import { TextEffectOne } from 'react-text-animate'
@@ -215,13 +202,13 @@ Additionally, if you want to contribute any, do check out the [Contributing](#-c
 
 ## 📒 Changelog
 
-Please read [CHANGELOG.md](https://github.com/mwaqar29/react-text-animate/edit/main/CHANGELOG.md).
+Please read [CHANGELOG.md](https://github.com/mwaqar29/react-text-animate/blob/main/CHANGELOG.md).
 
 ## 🤝 Contributing
 
 > [!IMPORTANT]
-> Please read [CONTRIBUTING.md](https://github.com/mwaqar29/react-text-animate/edit/main/CONTRIBUTING.md) & [CODE_OF_CONDUCT.md](https://github.com/mwaqar29/react-text-animate/edit/main/CODE_OF_CONDUCT.md) for details on our code of conduct, and the process for submitting pull requests to us.
-> I also strongly recommend that you check for open issues and pull requests to see if someone else is working on something similar.
+> Please read [CONTRIBUTING.md](https://github.com/mwaqar29/react-text-animate/blob/main/CONTRIBUTING.md) & [CODE_OF_CONDUCT.md](https://github.com/mwaqar29/react-text-animate/blob/main/CODE_OF_CONDUCT.md) for details on our code of conduct, and the process for submitting pull requests to us.
+> I also strongly recommend that you check if you are using the latest version of the project. If you are not up-to-date, see if updating fixes your issue first. Also, check for open issues and pull requests to see if someone else is working on something similar.
 
 Contributions are welcome! Here are several ways you can contribute:
 
