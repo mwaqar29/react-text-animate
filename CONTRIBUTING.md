@@ -55,31 +55,32 @@ npm i
 
 ### Creating a new component
 
-Please review the [repository structure](https://github.com/mwaqar29/react-text-animate/blob/main/README.md#-repository-structure) to familiarize yourself before creating folders and files for your component. Make sure to follow the same naming conventions for both files and folders.
+Please review the [repository structure](https://github.com/mwaqar29/react-text-animate/blob/main/README.md#-repository-structure) to familiarize yourself before creating folders and files for your component. Go through the code of some of the components to get a better understanding of how the standards are maintained across them.
 
 #### Naming convention
 
 All components follow a specific naming convention, and we expect you to do the same. To create a new component, create a folder `src/components/text-effect-[n]` where `n` is the next number in the series of component folders (e.g. `text-effect-4`).
 In it, create an `index.tsx` file (and `index.css` file if needed) and export your component with the name `TextEffect[n-in-words]` (e.g. `TextEffectFour`).
-This is done to address one of the below problems 😉.
+This approach eliminates the need to come up with new and creative names each time, addressing one of the problems below 😉.
 
 > There are only two hard things in Computer Science: cache invalidation and _naming things_. — Phil Karlton.
 
+Make sure to include common props like `wrapperElement`, `className`, `style`, `duration`, `delay` etc. to allow users to customize these aspects. The prop which is used to pass the string/words should be named as `text` to ensure consistency with other components.
+For any styles that need to be accessible globally, define them in styles.css.
+Finally, export your component from the `src/index.ts` file to ensure it's available for users importing the package.
+
 #### Using & Testing the component
 
-Once you are done, the next step is to export the component from the `src/index.ts` file.
-
 To test its functionality, you've to build the project & generate a compressed file of the `dist/` folder.
-For that, you can run following the command:
+For that, you can run following the commands:
 
 ```sh
-npm run clb; npm pack
+npm run clean:build; npm pack
 ```
 
-This is a combination of two commands. First one is a shorthand npm script for running multiple scripts which does three things:
+This is a combination of two commands. First one is an npm script which does the followng:
 
 - Cleans the `dist/` folder and the old compressed version of it (if any).
-- Lints the project
 - Builds the project
 
 Second one, is used to compress the `dist/` folder. It will generate a file in the root directory which will be named something like `react-text-animate-1.0.0.tgz`.
