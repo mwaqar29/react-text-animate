@@ -66,6 +66,7 @@ This approach eliminates the need to come up with new and creative names each ti
 > There are only two hard things in Computer Science: cache invalidation and _naming things_. — Phil Karlton.
 
 Make sure to include common props like `wrapperElement`, `className`, `style`, `duration`, `delay` etc. to allow users to customize these aspects. The prop which is used to pass the string/words should be named as `text` to ensure consistency with other components.
+Whenever possible, utilize the `useInView()` hook from Framer Motion to detect when a component enters the viewport. This will ensure that the animation triggers as the component scrolls into view.
 For any styles that need to be accessible globally, define them in `src/styles.css`.
 Finally, export your component from the `src/index.ts` file to ensure it's available for users importing the package.
 
