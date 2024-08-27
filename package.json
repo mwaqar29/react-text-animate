@@ -40,6 +40,9 @@
   "bugs": {
     "url": "https://github.com/mwaqar29/react-text-animate/issues"
   },
+  "dependencies": {
+    "framer-motion": "^11.3.28"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
@@ -47,7 +50,8 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^22.2.0",
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
     "autoprefixer": "^10.4.20",
@@ -75,9 +79,8 @@
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
-    "framer-motion": "^11.3.28",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "files": [
     "dist"
