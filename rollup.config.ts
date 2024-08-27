@@ -15,7 +15,7 @@ const config: RollupOptions[] = defineConfig([
       format: 'es',
       name: 'react-text-animate',
     },
-    external: ['react', 'react-dom', 'framer-motion'],
+    external: ['react', 'react-dom'],
     plugins: [
       typescript(),
       postcss({
