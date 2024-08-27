@@ -43,7 +43,8 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
     setInnerTextArray(() => {
       const spanArray = [...ref.current!.children] as HTMLSpanElement[]
 
-      return spanArray.map((elem) => elem.innerText)
+      // Replaced the `&nbsp;` character (Unicode character `\u00A0`) with actual space(' ')
+      return spanArray.map((elem) => elem.innerText?.replace(/\u00A0/g, ' '))
     })
   }, [])
 

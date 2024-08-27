@@ -33,8 +33,9 @@ export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
   const [innerText, setInnerText] = useState('')
 
   useEffect(() => {
-    setInnerText(ref.current?.innerText as string)
-  }, [text])
+    // Replaced the `&nbsp;` character (Unicode character `\u00A0`) with actual space(' ')
+    setInnerText(ref.current?.innerText?.replace(/\u00A0/g, ' ') as string)
+  }, [])
 
   return (
     <>
