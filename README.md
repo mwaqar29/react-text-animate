@@ -50,7 +50,7 @@
 <p>
 
 <p align="center">
-<em>Built with 🛠️</em>
+  <em>Built with 🛠️</em>
 </p>
 
 <p align="center">
@@ -61,6 +61,15 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eslint/eslint-original.svg" height="42" width="42" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" height="42" width="42" />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" height="42" width="42" />
+</p>
+
+<br/>
+
+<!-- Codesandbox Link -->
+<p align="center">
+  <a href="https://codesandbox.io/p/sandbox/react-text-animate-demo-4mrhxr" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/codesandbox-live-d6fb41?style=for-the-badge&labelColor=black&logo=codesandbox" alt="Codesandbox Live Demo Link" />
+  </a>
 </p>
 
 <hr/>
@@ -90,6 +99,7 @@ The `react-text-animate` library offers a seamless blend of ease & functionality
 - 📘 **TypeScript-Powered:** Components are built purely with TypeScript for type safety and reliability.
 - 🌀 **Fueled by Framer Motion**: Production-ready, 60fps animations that are smooth and performant.
 - ✅ **High-Quality Code**: ESLint and Prettier integration ensures clean, robust code.
+- ♿️ **Screen Reader Accessible**: The text within the components is fully readable by screen readers.
 - ⚡ **Optimized Bundle Size**: Rollup's tree shaking and dead code elimination keep the bundle lightweight and efficient.
 
 ## 📂 Repository Structure
@@ -113,7 +123,7 @@ The `react-text-animate` library offers a seamless blend of ease & functionality
 
 ## 🚀 Quick Start
 
-**_Requirements:_**
+**Requirements:**
 
 A React/Next.js application.
 
@@ -139,14 +149,15 @@ Install the `react-text-animate` library in your React/Next.js application using
 
 ### 💻 Usage
 
+**Note**: Check out the live demo of this package on [CodeSandbox](https://codesandbox.io/p/sandbox/react-text-animate-demo-4mrhxr).
+
 Out of the box, you can use one of the components as shown in the example below:
 
 ```jsx
 import { TextEffectOne } from 'react-text-animate'
 
 const App = () => {
-  const words = 'TYPOGRAPHY'
-  return <TextEffectOne text={words} />
+  return <TextEffectOne text="TYPOGRAPHY" />
 }
 
 export default App
@@ -156,9 +167,10 @@ And here is the result! 🎉
 
 ![Text Effect One Result](https://github.com/mwaqar29/react-text-animate/blob/main/src/assets/images/example/text-effect-1-result.gif)
 
-Yes, it is as simple as that to get started! But don't get carried away by the simplicity. Every component offers a variety of customization props. Feel free to experiment with these settings until you achieve your desired result. Below are the ones available for the `<TextEffectOne />` component mentioned above:
+Yes, getting started is that simple! However, don't let the simplicity make you think there's nothing more to it. Each component offers a range of customization options. Feel free to experiment with these settings until you achieve your desired result. Get creative by adjusting colors, letter spacing, font style and font weight, and try different font families using the `className` and `style` props! Below are the props available for the `<TextEffectOne />` component that was used above:
 
 > [!NOTE]
+> The only **required** prop is `text`. Rest all are optional.
 > Most of the props for the `<TextEffectOne />` component are common to all other animated text components. Only the **additional** props for other components will be listed to avoid redundancy. So a component (except `<TextEffectOne />`) may have more props than those listed in the table below.
 
 #### Component: `<TextEffectOne />`
@@ -166,7 +178,7 @@ Yes, it is as simple as that to get started! But don't get carried away by the s
 | Prop                      | Type                        | Default                                                | Description                                                                                                                                                                                |
 | ------------------------- | --------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `wrapperElement`          | keyof JSX.IntrinsicElements | `p`                                                    | JSX-equivalent of HTML Element wrapping the entire component<br/>For e.g. `div`, `span`, `strong` etc.                                                                                     |
-| `text`                    | string \| string[]          | `null`                                                 | The actual text to animate. For e.g `"Hey yo!"`, `["Multline", "Line 2"]`.                                                                                                                 |
+| `text`                    | string \| string[]          | `null`                                                 | The actual text to animate. For e.g `"ELEGANT"`, `["Multline", "Line 2"]`.                                                                                                                 |
 | `className`               | string                      | `null`                                                 | HTML class name applied to the wrapper element to style the text. **Tip**: Use `tailwind` utility classes for styling!                                                                     |
 | `style`                   | CSSProperties               | `null`                                                 | JSX inline style object. For e.g `{ fontStyle: 'italic' }`.                                                                                                                                |
 | `rotation`                | number                      | `0`                                                    | Rotation Angle of letters. For e.g. `67.5`, `-45` (in degree).                                                                                                                             |
@@ -189,11 +201,11 @@ Yes, it is as simple as that to get started! But don't get carried away by the s
 #### Component: `<TextEffectThree />`
 
 The props for this component include some from both `<TextEffectOne />` and `<TextEffectTwo />`.<br/>
-_**Note**: This component animates on hover!_
+_**Note**: This component animates on **hover**! And works best with text that contains only **uppercase** characters._
 
 ## 🧭 Project Roadmap
 
-We'll keep adding more animated text components in future! <br/>
+We'll keep adding more animated text components in future! Keep checking back every weekend for updates on new components and enhancements.
 Additionally, if you want to contribute any, do check out the [Contributing](#-contributing) section.
 
 ## 📒 Changelog
