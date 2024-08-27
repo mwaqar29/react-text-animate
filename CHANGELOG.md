@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/mwaqar29/react-text-animate/compare/2.0.0...2.0.1) (2024-08-27)
+
+### Bug Fixes
+
+- **dependencies:** fixed react version issue, and framer-motion issue ([1c1c664](https://github.com/mwaqar29/react-text-animate/commit/1c1c6649155391ade6de998af25ff4bd88ea31a6))
+- **te1&3:** fixed line-height issue for uppercase characters ([e66545e](https://github.com/mwaqar29/react-text-animate/commit/e66545e890006d8fcccb93515cccdd9738801e19))
+
 ## [2.0.0](https://github.com/mwaqar29/react-text-animate/compare/1.0.0...2.0.0) (2024-08-19)
 
 ### ⚠ BREAKING CHANGES
@@ -5,7 +12,7 @@
 - **text-effect-2:** kindly use the prop name 'text' to pass your string to the component instead of
   'words'.
 
-### refactor
+### Refactor
 
 - **text-effect-2:** changed the prop name 'words' to 'text' for consistency ([57c72cd](https://github.com/mwaqar29/react-text-animate/commit/57c72cda8ceb21d11f741128c0a43cf73c913c00))
 
