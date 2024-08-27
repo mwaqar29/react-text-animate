@@ -55,6 +55,8 @@ npm i
 
 ### Creating a new component
 
+**Note**: The animated component you create should provide a distinct effect compared to those already available in the library.
+
 Please review the [repository structure](https://github.com/mwaqar29/react-text-animate/blob/main/README.md#-repository-structure) to familiarize yourself before creating folders and files for your component. Go through the code of some of the components to get a better understanding of how the standards are maintained across them.
 
 #### Naming convention
