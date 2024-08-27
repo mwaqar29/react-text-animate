@@ -1,5 +1,11 @@
 import { motion, useInView } from 'framer-motion'
-import React, { CSSProperties, useMemo, useRef } from 'react'
+import React, {
+  CSSProperties,
+  useMemo,
+  useRef,
+  useEffect,
+  useState,
+} from 'react'
 
 interface TextEffectOneProps {
   wrapperElement?: keyof JSX.IntrinsicElements
@@ -31,11 +37,23 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
   lineHeight,
 }) => {
   const ref = useRef<HTMLElement>(null)
+  const [innerTextArray, setInnerTextArray] = useState<string[]>([])
+
+  useEffect(() => {
+    setInnerTextArray(() => {
+      const spanArray = [...ref.current!.children] as HTMLSpanElement[]
+
+      return spanArray.map((elem) => elem.innerText)
+    })
+  }, [])
+
   const isInView = useInView(ref, {
     amount: elementVisibilityAmount,
     once: animateOnce,
   })
+
   const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text])
+
   const revealUp = {
     hidden: {
       transition: { type: 'spring', bounce: 0 },
@@ -69,7 +87,8 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
               display: 'block',
               overflow: 'hidden',
               lineHeight:
-                lineHeight || (line === line.toUpperCase() ? '0.81' : '1.2'),
+                lineHeight ||
+                (innerTextArray[idx] === line.toUpperCase() ? '0.81' : '1.2'),
             }}
           >
             {line.split(' ').map((word, idx2) => (

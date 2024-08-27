@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useEffect, useRef, useState } from 'react'
 import './index.css'
 
 /*
@@ -28,6 +28,14 @@ export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
   staggerDuration = 0.02,
   animationDuration = 0.2,
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  const [innerText, setInnerText] = useState('')
+
+  useEffect(() => {
+    setInnerText(ref.current?.innerText as string)
+  }, [text])
+
   return (
     <>
       <span className="__sr-only">{text}</span>
@@ -40,11 +48,11 @@ export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
           ...{
             width: 'fit-content',
             lineHeight:
-              lineHeight || (text === text.toUpperCase() ? 0.81 : 1.2),
+              lineHeight || (innerText === text.toUpperCase() ? 0.81 : 1.2),
           },
         }}
       >
-        <div>
+        <div ref={ref}>
           {text.split('').map((char, idx) => (
             <motion.span
               key={idx}
