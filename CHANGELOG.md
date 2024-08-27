@@ -1,3 +1,9 @@
+## [2.0.2](https://github.com/mwaqar29/react-text-animate/compare/2.0.1...2.0.2) (2024-08-27)
+
+### Bug Fixes
+
+- **te1&3:** fixed lineHeight issue caused by 'nbsp' ([236e7fb](https://github.com/mwaqar29/react-text-animate/commit/236e7fb5d9e558d7f1e7ea38850efe18113f4f8e))
+
 ## [2.0.1](https://github.com/mwaqar29/react-text-animate/compare/2.0.0...2.0.1) (2024-08-27)
 
 ### Bug Fixes
