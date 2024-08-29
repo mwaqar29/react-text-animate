@@ -15,7 +15,7 @@
   </a>
 
   <!-- Minified Bundle Size -->
-  <img src="https://img.shields.io/bundlephobia/min/react-text-animate?style=for-the-badge&color=yellow" alt="Minified Size">
+  <img src="https://img.shields.io/npm/unpacked-size/react-text-animate/latest?style=for-the-badge&color=yellow" alt="Minzipped Size">
 
   <!-- Latest GitHub Release-->
   <a href="https://github.com/mwaqar29/react-text-animate/releases" target="_blank" rel="noopener noreferrer">
@@ -185,6 +185,7 @@ Yes, getting started is that simple! However, don't let the simplicity make you 
 | `staggerDuration`         | number                      | `0.1`                                                  | Delay between the animation of each individual letter (in seconds).                                                                                                                        |
 | `fromTop`                 | boolean                     | `false`                                                | Animate letters from top to bottom.                                                                                                                                                        |
 | `fromLast`                | boolean                     | `false`                                                | Animate letters from right to left.                                                                                                                                                        |
+| `wordByWord`              | boolean                     | `false`                                                | Animate letters word-by-word instead of character-by-character.                                                                                                                            |
 | `initialDelay`            | number                      | `0`                                                    | Delay before starting the animation (in seconds).                                                                                                                                          |
 | `animateOnce`             | boolean                     | `false`                                                | When the text component scrolls out of view and then back into view, the animation is triggered again. This prop can be used to turn this behaviour off.                                   |
 | `elementVisibilityAmount` | number                      | `0.5`                                                  | The amount of an element that needs to enter the viewport for the animation to be triggered. This is defined as a number between 0 and 1.                                                  |

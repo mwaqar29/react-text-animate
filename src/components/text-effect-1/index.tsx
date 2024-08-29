@@ -20,6 +20,7 @@ interface TextEffectOneProps {
   animateOnce?: boolean
   elementVisibilityAmount?: number
   lineHeight?: number
+  wordByWord?: boolean
 }
 
 export const TextEffectOne: React.FC<TextEffectOneProps> = ({
@@ -35,6 +36,7 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
   animateOnce = false,
   elementVisibilityAmount = 0.5,
   lineHeight,
+  wordByWord = false,
 }) => {
   const ref = useRef<HTMLElement>(null)
   const [innerTextArray, setInnerTextArray] = useState<string[]>([])
@@ -68,6 +70,42 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
     },
   }
 
+  const renderByWord = (line: string) => {
+    return line.split(' ').map((word, idx2) => (
+      <>
+        <motion.span
+          key={word + idx2}
+          variants={revealUp}
+          style={{ display: 'inline-block' }}
+        >
+          {word}
+        </motion.span>
+        {idx2 < line.split(' ').length - 1 && (
+          <span style={{ display: 'inline-block' }}>&nbsp;</span>
+        )}
+      </>
+    ))
+  }
+
+  const renderByChar = (line: string) => {
+    return line.split(' ').map((word, idx2) => (
+      <span key={word + idx2} style={{ display: 'inline-block' }}>
+        {word.split('').map((char: string, idx3: number) => (
+          <motion.span
+            key={char + idx3}
+            variants={revealUp}
+            style={{ display: 'inline-block' }}
+          >
+            {char}
+          </motion.span>
+        ))}
+        {idx2 < line.split(' ').length - 1 && (
+          <span style={{ display: 'inline-block' }}>&nbsp;</span>
+        )}
+      </span>
+    ))
+  }
+
   return (
     <Wrapper className={className} style={style}>
       <span className="__sr-only">{textArray.join(' ')}</span>
@@ -92,22 +130,7 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
                 (innerTextArray[idx] === line.toUpperCase() ? '0.81' : '1.2'),
             }}
           >
-            {line.split(' ').map((word, idx2) => (
-              <span key={word + idx2} style={{ display: 'inline-block' }}>
-                {word.split('').map((char: string, idx3: number) => (
-                  <motion.span
-                    key={char + idx3}
-                    variants={revealUp}
-                    style={{ display: 'inline-block' }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-                {idx2 < line.split(' ').length - 1 && (
-                  <span style={{ display: 'inline-block' }}>&nbsp;</span>
-                )}
-              </span>
-            ))}
+            {wordByWord ? renderByWord(line) : renderByChar(line)}
           </span>
         ))}
       </motion.span>
