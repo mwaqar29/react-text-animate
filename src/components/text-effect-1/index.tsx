@@ -1,4 +1,5 @@
 import { motion, useInView } from 'framer-motion'
+import GraphemeSplitter from 'grapheme-splitter'
 import React, {
   CSSProperties,
   useMemo,
@@ -22,6 +23,8 @@ interface TextEffectOneProps {
   lineHeight?: number
   wordByWord?: boolean
 }
+
+const splitter = new GraphemeSplitter()
 
 export const TextEffectOne: React.FC<TextEffectOneProps> = ({
   wrapperElement: Wrapper = 'p',
@@ -90,7 +93,7 @@ export const TextEffectOne: React.FC<TextEffectOneProps> = ({
   const renderByChar = (line: string) => {
     return line.split(' ').map((word, idx2) => (
       <span key={word + idx2} style={{ display: 'inline-block' }}>
-        {word.split('').map((char: string, idx3: number) => (
+        {splitter.splitGraphemes(word).map((char: string, idx3: number) => (
           <motion.span
             key={char + idx3}
             variants={revealUp}

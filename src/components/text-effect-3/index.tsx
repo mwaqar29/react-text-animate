@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import GraphemeSplitter from 'grapheme-splitter'
 import React, { CSSProperties, useEffect, useRef, useState } from 'react'
 import './index.css'
 
@@ -17,6 +18,8 @@ interface TextEffectThreeProps {
   staggerDuration?: number
   animationDuration?: number
 }
+
+const splitter = new GraphemeSplitter()
 
 export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
   text,
@@ -54,7 +57,7 @@ export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
         }}
       >
         <div ref={ref}>
-          {text.split('').map((char, idx) => (
+          {splitter.splitGraphemes(text).map((char, idx) => (
             <motion.span
               key={idx}
               variants={{
@@ -83,7 +86,7 @@ export const TextEffectThree: React.FC<TextEffectThreeProps> = ({
           ))}
         </div>
         <div className="text-hidden">
-          {text.split('').map((char, idx) => (
+          {splitter.splitGraphemes(text).map((char, idx) => (
             <motion.span
               key={idx}
               variants={{

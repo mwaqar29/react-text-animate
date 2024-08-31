@@ -41,7 +41,8 @@
     "url": "https://github.com/mwaqar29/react-text-animate/issues"
   },
   "dependencies": {
-    "framer-motion": "^11.3.28"
+    "framer-motion": "^11.3.28",
+    "grapheme-splitter": "^1.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
