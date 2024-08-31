@@ -67,7 +67,7 @@
 
 <!-- Codesandbox Link -->
 <p align="center">
-  <a href="https://codesandbox.io/p/sandbox/react-text-animate-demo-4mrhxr" target="_blank" rel="noopener noreferrer">
+  <a href="https://4mrhxr.csb.app/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/codesandbox-live-d6fb41?style=for-the-badge&labelColor=black&logo=codesandbox" alt="Codesandbox Live Demo Link" />
   </a>
 </p>
@@ -128,7 +128,7 @@ The `react-text-animate` library offers a seamless blend of ease & functionality
 A React/Next.js application.
 
 > [!NOTE]
-> This package is built using `React v18.3`. So try to have something similar in your project so that the library works without any issues.
+> This package requires your project to use **React v18.0** or higher to function properly.
 
 ### ⚙️ Installation
 
@@ -149,7 +149,7 @@ Install the `react-text-animate` library in your React/Next.js application using
 
 ### 💻 Usage
 
-**Note**: Check out the live demo of this package on [CodeSandbox](https://codesandbox.io/p/sandbox/react-text-animate-demo-4mrhxr).
+**Note**: Check out the live demo of this package along with many more usage examples on [CodeSandbox](https://codesandbox.io/p/sandbox/react-text-animate-demo-4mrhxr).
 
 Out of the box, you can use one of the components as shown in the example below:
 
@@ -177,11 +177,11 @@ Yes, getting started is that simple! However, don't let the simplicity make you 
 
 | Prop                      | Type                        | Default                                                | Description                                                                                                                                                                                |
 | ------------------------- | --------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `wrapperElement`          | keyof JSX.IntrinsicElements | `p`                                                    | JSX-equivalent of HTML Element wrapping the entire component<br/>For e.g. `div`, `span`, `strong` etc.                                                                                     |
-| `text`                    | string \| string[]          | `null`                                                 | The actual text to animate. For e.g `"ELEGANT"`, `["Multline", "Line 2"]`.                                                                                                                 |
-| `className`               | string                      | `null`                                                 | HTML class name applied to the wrapper element to style the text. **Tip**: Use `tailwind` utility classes for styling!                                                                     |
-| `style`                   | CSSProperties               | `null`                                                 | JSX inline style object. For e.g `{ fontStyle: 'italic' }`.                                                                                                                                |
-| `rotation`                | number                      | `0`                                                    | Rotation Angle of letters. For e.g. `67.5`, `-45` (in degree).                                                                                                                             |
+| `wrapperElement`          | keyof JSX.IntrinsicElements | `p`                                                    | JSX-equivalent of HTML Element wrapping the entire component<br/>For e.g. `div`, `span`, `strong`, etc.                                                                                    |
+| `text`                    | string \| string[]          | `undefined`                                            | The actual text to animate. For e.g. `"ELEGANT"`, `["Multline", "Line 2"]`, etc.                                                                                                           |
+| `className`               | string                      | `undefined`                                            | HTML class name applied to the wrapper element to style the text. **Tip**: Use `tailwind` utility classes for styling!                                                                     |
+| `style`                   | CSSProperties               | `undefined`                                            | JSX inline style object. For e.g. `{ fontStyle: 'italic' }`.                                                                                                                               |
+| `rotation`                | number                      | `0`                                                    | Rotation Angle of letters (or words, when `wordByWord` prop is `true`). For e.g. `67.5`, `-45`, etc (in degrees).                                                                          |
 | `staggerDuration`         | number                      | `0.1`                                                  | Delay between the animation of each individual letter (in seconds).                                                                                                                        |
 | `fromTop`                 | boolean                     | `false`                                                | Animate letters from top to bottom.                                                                                                                                                        |
 | `fromLast`                | boolean                     | `false`                                                | Animate letters from right to left.                                                                                                                                                        |
@@ -193,16 +193,24 @@ Yes, getting started is that simple! However, don't let the simplicity make you 
 
 #### Component: `<TextEffectTwo />`
 
-| Prop                | Type    | Default | Description                                               |
-| ------------------- | ------- | ------- | --------------------------------------------------------- |
-| `text`              | string  | `null`  | The actual text to animate. For e.g `"Hey yo!"`.          |
-| `filter`            | boolean | `true`  | Toggle blur effect in animation.                          |
-| `animationDuration` | number  | `0.1`   | TIme taken for entire animation to complete (in seconds). |
+| Prop                | Type    | Default     | Description                                                   |
+| ------------------- | ------- | ----------- | ------------------------------------------------------------- |
+| `text`              | string  | `undefined` | The actual text to animate. For e.g. `"Hey yo!"`.             |
+| `filter`            | boolean | `true`      | Toggles the blur effect in the animation.                     |
+| `animationDuration` | number  | `0.1`       | TIme taken for the entire animation to complete (in seconds). |
 
 #### Component: `<TextEffectThree />`
 
-The props for this component include some from both `<TextEffectOne />` and `<TextEffectTwo />`.<br/>
+The props for this component and further components mentioned below include some from both `<TextEffectOne />` and `<TextEffectTwo />`.<br/>
 _**Note**: This component animates on **hover**! And works best with text that contains only **uppercase** characters._
+
+#### Component: `<TextEffectFour />`
+
+| Prop              | Type         | Default     | Description                                                                                                                                                                                                                      |
+| ----------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cursorConfig`    | CursorConfig | `undefined` | The CSS styling of the cursor. Use it to create different types of cursors & override the defaults. **Note**: Initially, this prop is `undefined`, but default styling is applied to ensure the cursor is visible on the screen. |
+| `cursorBlinkRate` | number       | `0.35`      | Sets the cursor blink speed/interval (in seconds). Lower values increase blink frequency; higher values decrease it.                                                                                                             |
+| `fromCenter`      | boolean      | `false`     | Start the animation from the center.                                                                                                                                                                                             |
 
 ## 🧭 Project Roadmap
 
