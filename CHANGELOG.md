@@ -1,3 +1,11 @@
+## [2.1.0](https://github.com/mwaqar29/react-text-animate/compare/2.0.2...2.1.0) (2024-08-31)
+
+### Features
+
+- **components:** added grapheme spliter which adds emoji & foreign lang support ([b1e0a39](https://github.com/mwaqar29/react-text-animate/commit/b1e0a392904bab12b3d8a2118ef801899e9b9e13))
+- **text-effect-1:** added new prop 'wordByWord' ([4b06a71](https://github.com/mwaqar29/react-text-animate/commit/4b06a7164e6739acd660d44be58de382fa408585))
+- **text-effect-4:** added new component text-effect-4! ([e203fb1](https://github.com/mwaqar29/react-text-animate/commit/e203fb16ef8c1a50fbcdfe81068efa85ef74124a))
+
 ## [2.0.2](https://github.com/mwaqar29/react-text-animate/compare/2.0.1...2.0.2) (2024-08-27)
 
 ### Bug Fixes
