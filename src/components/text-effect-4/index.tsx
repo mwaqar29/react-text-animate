@@ -1,15 +1,13 @@
-// My Typewriter Effect
-
 import { motion, useInView } from 'framer-motion'
 import GraphemeSplitter from 'grapheme-splitter'
-import React, { CSSProperties, useMemo, useRef } from 'react'
+import React, { CSSProperties, useRef } from 'react'
 
 interface CursorConfig {
-  width: string
-  height: string
-  marginLeft: string
-  marginRight: string
-  backgroundColor: string
+  type?: 'hidden' | 'vertical' | 'horizontal'
+  blinkRate?: number
+  width?: string
+  color?: string
+  marginLeft?: string
 }
 
 interface TextEffectFourProps {
@@ -19,7 +17,6 @@ interface TextEffectFourProps {
   style?: CSSProperties
   fromCenter?: boolean
   cursorConfig?: CursorConfig
-  cursorBlinkRate?: number
   staggerDuration?: number
   initialDelay?: number
   animateOnce?: boolean
@@ -35,7 +32,6 @@ export const TextEffectFour: React.FC<TextEffectFourProps> = ({
   style,
   fromCenter = false,
   cursorConfig,
-  cursorBlinkRate = 0.35,
   staggerDuration = 0.125,
   initialDelay = 0,
   animateOnce = false,
@@ -46,47 +42,57 @@ export const TextEffectFour: React.FC<TextEffectFourProps> = ({
     amount: elementVisibilityAmount,
     once: animateOnce,
   })
-  const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text])
+  const wordsArray = text.split(' ')
   const revealSuddenly = {
     hidden: {
       display: 'none',
+      opacity: 0,
       transition: {
         duration: 0,
       },
-      opacity: 0,
     },
     visible: {
       display: 'inline-block',
+      opacity: 1,
       transition: {
         duration: 0,
       },
-      opacity: 1,
     },
   }
 
   const renderCursor = () => {
+    const config = {
+      type: cursorConfig?.type ?? 'vertical',
+      blinkRate: cursorConfig?.blinkRate ?? 0.35,
+      width: cursorConfig?.width ?? '1px',
+      color: cursorConfig?.color ?? 'currentColor',
+      marginLeft: cursorConfig?.marginLeft ?? '0px',
+    }
+
     return (
       <motion.span
         animate={{
           opacity: [0, 0, 0, 1, 1, 1],
         }}
         transition={{
-          duration: cursorBlinkRate,
+          duration: config.blinkRate,
           repeat: Infinity,
           repeatType: 'reverse',
           ease: 'linear',
           times: [0, 0.2, 0.4, 0.6, 0.8, 1],
         }}
         style={{
-          display: 'inline-block',
-          width: '1px',
-          height: '14px',
-          marginLeft: '2px',
-          marginRight: '0',
-          backgroundColor: 'white',
-          ...cursorConfig,
+          display: config?.type === 'hidden' ? 'none' : 'inline',
+          color: config?.color,
+          borderLeftWidth:
+            config?.type === 'horizontal' ? '0px' : config?.width,
+          borderLeftStyle: 'solid',
+          borderLeftColor: config?.color,
+          marginLeft: config?.marginLeft,
         }}
-      ></motion.span>
+      >
+        {config?.type === 'horizontal' && '_'}
+      </motion.span>
     )
   }
 
@@ -104,7 +110,7 @@ export const TextEffectFour: React.FC<TextEffectFourProps> = ({
           : {}),
       }}
     >
-      <span className="__sr-only">{textArray.join(' ')}</span>
+      <span className="__sr-only">{text}</span>
       <motion.span
         ref={ref}
         initial="hidden"
@@ -114,25 +120,19 @@ export const TextEffectFour: React.FC<TextEffectFourProps> = ({
           delayChildren: initialDelay,
         }}
       >
-        {textArray.map((line: string, idx: number) => (
-          <span key={line + idx}>
-            {line.split(' ').map((word: string, idx2: number) => (
-              <span key={word + idx2}>
-                {splitter
-                  .splitGraphemes(word)
-                  .map((char: string, idx3: number) => (
-                    <motion.span key={char + idx3} variants={revealSuddenly}>
-                      {char}
-                    </motion.span>
-                  ))}
-                {idx2 < line.split(' ').length - 1 && (
-                  <motion.span variants={revealSuddenly}>&nbsp;</motion.span>
-                )}
-              </span>
+        {wordsArray.map((word: string, idx: number) => (
+          <span key={word + idx}>
+            {splitter.splitGraphemes(word).map((char: string, idx2: number) => (
+              <motion.span key={char + idx2} variants={revealSuddenly}>
+                {char}
+              </motion.span>
             ))}
-            {renderCursor()}
+            {idx < wordsArray.length - 1 && (
+              <motion.span variants={revealSuddenly}>&nbsp;</motion.span>
+            )}
           </span>
         ))}
+        {renderCursor()}
       </motion.span>
     </Wrapper>
   )
