@@ -1,3 +1,9 @@
+## [2.1.1](https://github.com/mwaqar29/react-text-animate/compare/2.1.0...2.1.1) (2024-09-01)
+
+### Bug Fixes
+
+- **text-effect-4:** cursor responsiveness issues fixed; other minor issues handled ([002b7ad](https://github.com/mwaqar29/react-text-animate/commit/002b7adb3e117f06452eab8d15f6785d75f332ce))
+
 ## [2.1.0](https://github.com/mwaqar29/react-text-animate/compare/2.0.2...2.1.0) (2024-08-31)
 
 ### Features
