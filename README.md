@@ -173,7 +173,7 @@ Yes, getting started is that simple! However, don't let the simplicity make you 
 > The only **required** prop is `text`. Rest all are optional.
 > Most of the props for the `<TextEffectOne />` component are common to all other animated text components. Only the **additional** props for other components will be listed to avoid redundancy. So a component (except `<TextEffectOne />`) may have more props than those listed in the table below.
 
-#### Component: `<TextEffectOne />`
+#### 🧩 Component: `<TextEffectOne />`
 
 | Prop                      | Type                        | Default                                                | Description                                                                                                                                                                                |
 | ------------------------- | --------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -191,26 +191,35 @@ Yes, getting started is that simple! However, don't let the simplicity make you 
 | `elementVisibilityAmount` | number                      | `0.5`                                                  | The amount of an element that needs to enter the viewport for the animation to be triggered. This is defined as a number between 0 and 1.                                                  |
 | `lineHeight`              | number                      | `0.8` for text with only uppercase letters, else `1.2` | Specifies the line height to prevent lowercase characters with descenders (like 'g', 'j', 'p', 'q', 'y') from being cut off in some fonts. Adjust this property to fit the font as needed. |
 
-#### Component: `<TextEffectTwo />`
+#### 🧩 Component: `<TextEffectTwo />`
 
 | Prop                | Type    | Default     | Description                                                   |
 | ------------------- | ------- | ----------- | ------------------------------------------------------------- |
 | `text`              | string  | `undefined` | The actual text to animate. For e.g. `"Hey yo!"`.             |
 | `filter`            | boolean | `true`      | Toggles the blur effect in the animation.                     |
-| `animationDuration` | number  | `0.1`       | TIme taken for the entire animation to complete (in seconds). |
+| `animationDuration` | number  | `0.1`       | Time taken for the entire animation to complete (in seconds). |
 
-#### Component: `<TextEffectThree />`
+#### 🧩 Component: `<TextEffectThree />`
 
 The props for this component and further components mentioned below include some from both `<TextEffectOne />` and `<TextEffectTwo />`.<br/>
 _**Note**: This component animates on **hover**! And works best with text that contains only **uppercase** characters._
 
-#### Component: `<TextEffectFour />`
+#### 🧩 Component: `<TextEffectFour />`
 
-| Prop              | Type         | Default     | Description                                                                                                                                                                                                                      |
-| ----------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cursorConfig`    | CursorConfig | `undefined` | The CSS styling of the cursor. Use it to create different types of cursors & override the defaults. **Note**: Initially, this prop is `undefined`, but default styling is applied to ensure the cursor is visible on the screen. |
-| `cursorBlinkRate` | number       | `0.35`      | Sets the cursor blink speed/interval (in seconds). Lower values increase blink frequency; higher values decrease it.                                                                                                             |
-| `fromCenter`      | boolean      | `false`     | Start the animation from the center.                                                                                                                                                                                             |
+| Prop           | Type         | Default     | Description                                                                                                                                                                                                                                                                                        |
+| -------------- | ------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cursorConfig` | CursorConfig | `undefined` | The styling of the cursor along with some other properties (that are listed in the below table). Use it to create different types of cursors & override the defaults. **Note**: Initially, this prop is `undefined`, but default styling is applied to ensure the cursor is visible on the screen. |
+| `fromCenter`   | boolean      | `false`     | Start the animation from the center.                                                                                                                                                                                                                                                               |
+
+##### Interface: `CursorConfig`
+
+| Name         | Type                             | Default        | Description                                                                                                          |
+| ------------ | -------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `type`       | hidden \| vertical \| horizontal | `vertical`     | Types of cursors to choose from.                                                                                     |
+| `blinkRate`  | number                           | `0.35`         | Sets the cursor blink speed/interval (in seconds). Lower values increase blink frequency; higher values decreases it |
+| `width`      | string                           | `1px`          | Cursor width. For e.g. `4px`, `1rem`, etc.                                                                           |
+| `color`      | string                           | `currentColor` | Cursor color. For e.g. `cyan`, `green`, `#c4c4c4`, etc                                                               |
+| `marginLeft` | string                           | `0px`          | Left Margin of the cursor (to add some more spacing)                                                                 |
 
 ## 🧭 Project Roadmap
 
@@ -235,8 +244,7 @@ Additionally, if you want to contribute any, do check out the [Contributing](#-c
 
 - **te1&3:** fixed lineHeight issue caused by 'nbsp' ([236e7fb](https://github.com/mwaqar29/react-text-animate/commit/236e7fb5d9e558d7f1e7ea38850efe18113f4f8e))
 
-> [!NOTE]
-> Please read [CHANGELOG.md](https://github.com/mwaqar29/react-text-animate/blob/main/CHANGELOG.md) for complete list of changes.
+> **Note**: Please read [CHANGELOG.md](https://github.com/mwaqar29/react-text-animate/blob/main/CHANGELOG.md) for complete list of changes.
 
 ## 🤝 Contributing
 
